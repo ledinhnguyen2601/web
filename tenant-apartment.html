@@ -2,7 +2,7 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Cổng Cư Dân Chung Cư</title>
+    <title>Cổng Cư Dân</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -17,28 +17,19 @@
         </div>
         <ul class="nav-menu">
           <li class="active">
-            <a href="#" style="color: #0f766e; border-right-color: #0f766e"
+            <a href="#" onclick="switchTab('tab-bangtin', this)"
               ><i class="fas fa-bullhorn"></i> Bảng tin Tòa nhà</a
             >
           </li>
           <li>
-            <a href="#"
+            <a href="#" onclick="switchTab('tab-hoadon', this)"
               ><i class="fas fa-file-invoice"></i> Phí Quản lý & Hóa đơn</a
             >
           </li>
           <li>
-            <a href="#"
+            <a href="#" onclick="switchTab('tab-baoloi', this)"
               ><i class="fas fa-exclamation-triangle"></i> Báo cáo sự cố</a
             >
-          </li>
-          <li
-            style="
-              border-top: 1px solid var(--border-color);
-              margin-top: 10px;
-              padding-top: 10px;
-            "
-          >
-            <a href="#"><i class="fas fa-motorcycle"></i> Quản lý Thẻ xe</a>
           </li>
         </ul>
       </aside>
@@ -55,79 +46,91 @@
         </header>
 
         <div class="container" style="padding-top: 30px; max-width: 800px">
-          <h3
-            style="
-              margin-bottom: 15px;
-              border-bottom: 2px solid #0f766e;
-              display: inline-block;
-              padding-bottom: 5px;
-            "
-          >
-            Bảng tin từ Ban Quản Lý
-          </h3>
-
-          <div
-            class="card"
-            style="margin-bottom: 15px; border-left: 4px solid #0f766e"
-          >
-            <div
+          <div id="tab-bangtin" class="content-section">
+            <h3
               style="
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+                border-bottom: 2px solid #0f766e;
+                display: inline-block;
+                padding-bottom: 5px;
               "
             >
-              <strong style="font-size: 1.1rem; color: var(--text-main)"
+              Bảng tin từ Ban Quản Lý
+            </h3>
+            <div class="card" style="border-left: 4px solid #0f766e">
+              <strong
+                style="
+                  font-size: 1.1rem;
+                  color: var(--text-main);
+                  display: block;
+                "
                 >Thông báo vệ sinh bể nước ngầm định kỳ</strong
               >
               <span style="font-size: 0.8rem; color: var(--text-muted)"
-                ><i class="fas fa-clock"></i> 20/03/2026</span
+                >20/03/2026</span
               >
+              <p style="color: var(--text-muted); margin-top: 10px">
+                BQL xin thông báo lịch thau rửa bể nước ngầm vào Chủ nhật tuần
+                này.
+              </p>
             </div>
-            <p
-              style="
-                color: var(--text-muted);
-                font-size: 0.95rem;
-                margin-bottom: 10px;
-              "
-            >
-              Kính gửi Quý cư dân, BQL xin thông báo lịch thau rửa bể nước ngầm
-              vào Chủ nhật tuần này. Kính mong cư dân chủ động tích trữ nước
-              sinh hoạt...
-            </p>
-            <img
-              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
-              style="max-width: 100%; border-radius: 6px"
-            />
           </div>
 
-          <div
-            class="card"
-            style="margin-bottom: 15px; border-left: 4px solid #f59e0b"
-          >
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-              "
-            >
-              <strong style="font-size: 1.1rem; color: var(--text-main)"
-                >Yêu cầu đóng phí quản lý Tháng 3</strong
-              >
-              <span style="font-size: 0.8rem; color: var(--text-muted)"
-                ><i class="fas fa-clock"></i> 15/03/2026</span
-              >
+          <div id="tab-hoadon" class="content-section" style="display: none">
+            <div class="card">
+              <h3 style="margin-bottom: 15px; color: var(--text-main)">
+                <i class="fas fa-file-invoice"></i> Hóa đơn Tháng này
+              </h3>
+              <p>Phí quản lý: <strong>300.000 đ</strong></p>
+              <p>Gửi xe (2 xe máy): <strong>200.000 đ</strong></p>
+              <hr style="margin: 15px 0" />
+              <p style="font-size: 1.2rem">
+                Tổng cộng:
+                <strong style="color: #ef4444">500.000 đ</strong> (Chưa thanh
+                toán)
+              </p>
             </div>
-            <p style="color: var(--text-muted); font-size: 0.95rem">
-              Đề nghị các căn hộ chưa đóng phí quản lý tháng 3 vui lòng thanh
-              toán tại VP BQL hoặc chuyển khoản trước ngày 25/03 để tránh gián
-              đoạn dịch vụ.
-            </p>
+          </div>
+
+          <div id="tab-baoloi" class="content-section" style="display: none">
+            <div class="card">
+              <h3 style="margin-bottom: 15px; color: var(--text-main)">
+                <i class="fas fa-tools"></i> Gửi Yêu Cầu Hỗ Trợ
+              </h3>
+              <label>Phân loại sự cố</label>
+              <select id="issueType">
+                <option>Thang máy</option>
+                <option>Điện/Nước</option>
+                <option>An ninh</option>
+                <option>Khác</option>
+              </select>
+              <label>Mô tả chi tiết</label>
+              <textarea rows="3"></textarea>
+              <button
+                class="btn btn-primary"
+                style="background: #0f766e"
+                onclick="alert('Đã gửi báo cáo cho BQL!')"
+              >
+                Gửi báo cáo
+              </button>
+            </div>
           </div>
         </div>
       </main>
     </div>
+
     <script type="module" src="js/auth.js"></script>
+    <script>
+      function switchTab(tabId, element) {
+        document
+          .querySelectorAll(".content-section")
+          .forEach((sec) => (sec.style.display = "none"));
+        document
+          .querySelectorAll(".nav-menu li")
+          .forEach((li) => li.classList.remove("active"));
+        document.getElementById(tabId).style.display = "block";
+        element.parentElement.classList.add("active");
+      }
+    </script>
   </body>
 </html>
