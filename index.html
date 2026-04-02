@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hệ thống Quản lý Đối soát</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-wrap">
+      <nav
+        style="
+          background: white;
+          border-bottom: 1px solid var(--border-color);
+          padding: 15px 0;
+        "
+      >
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              font-size: 1.3rem;
+              font-weight: bold;
+              color: var(--primary-color);
+            "
+          >
+            <i class="fas fa-building"></i> Nền tảng Quản lý Đối soát
+          </div>
+          <a href="login.html" class="btn btn-primary" style="width: auto"
+            >Đăng nhập Hệ thống</a
+          >
+        </div>
+      </nav>
+
+      <div
+        class="container"
+        style="padding-top: 60px; text-align: center; max-width: 800px"
+      >
+        <h1
+          style="font-size: 2rem; margin-bottom: 15px; color: var(--text-main)"
+        >
+          Quản Lý Thông tin & Thanh toán
+        </h1>
+        <p style="color: var(--text-muted); margin-bottom: 40px">
+          Vui lòng chọn Khu trọ / Chung cư của bạn để truy cập Bảng điều khiển.
+        </p>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 50px">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Nhập tên Tòa nhà, Khu trọ..."
+            style="margin-bottom: 0"
+            onkeyup="filterBuildings()"
+          />
+          <button class="btn btn-primary" style="width: 120px">
+            <i class="fas fa-search"></i> Tìm kiếm
+          </button>
+        </div>
+
+        <h3
+          style="
+            text-align: left;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+          "
+        >
+          Danh sách Đối tác liên kết
+        </h3>
+
+        <div
+          id="buildingList"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+          "
+        >
+          <div
+            class="card building-item"
+            onclick="window.location.href = 'login.html'"
+            style="cursor: pointer"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+              "
+            >
+              <h3
+                class="b-name"
+                style="color: var(--primary-color); font-size: 1.1rem"
+              >
+                Chung cư Mini Hoa Sen
+              </h3>
+              <span
+                style="
+                  font-size: 0.8rem;
+                  border: 1px solid var(--border-color);
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  color: var(--text-muted);
+                "
+                >Chung cư</span
+              >
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem">
+              <i class="fas fa-map-marker-alt"></i> Số 12, Ngõ 4, Nguyễn Trãi,
+              Hà Nội
+            </p>
+          </div>
+
+          <div
+            class="card building-item"
+            onclick="window.location.href = 'login.html'"
+            style="cursor: pointer"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+              "
+            >
+              <h3
+                class="b-name"
+                style="color: var(--primary-color); font-size: 1.1rem"
+              >
+                Khu trọ Bình Dân
+              </h3>
+              <span
+                style="
+                  font-size: 0.8rem;
+                  border: 1px solid var(--border-color);
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  color: var(--text-muted);
+                "
+                >Xóm trọ</span
+              >
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem">
+              <i class="fas fa-map-marker-alt"></i> Hẻm 21, Lê Lợi, TP Vinh
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      style="
+        background: white;
+        border-top: 1px solid var(--border-color);
+        padding: 40px 0;
+        margin-top: auto;
+      "
+    >
+      <div
+        class="container"
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px"
+      >
+        <div>
+          <h3 style="color: var(--primary-color); margin-bottom: 15px">
+            <i class="fas fa-building"></i> QLDS
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem">
+            Hệ thống chuyển đổi số, quản lý đối soát và vận hành không gian sống
+            toàn diện.
+          </p>
+          <p
+            style="
+              color: var(--text-main);
+              font-size: 0.95rem;
+              margin-top: 15px;
+            "
+          >
+            &copy; 2026. Thiết kế và phát triển bởi
+            <strong>@Lê Đình Nguyên</strong>.
+          </p>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 15px; color: var(--text-main)">
+            Liên hệ Đối tác Hợp tác
+          </h4>
+          <ul
+            style="
+              list-style: none;
+              color: var(--text-muted);
+              font-size: 0.95rem;
+              padding: 0;
+            "
+          >
+            <li style="margin-bottom: 10px">
+              <i
+                class="fas fa-city"
+                style="width: 25px; color: var(--primary-color)"
+              ></i>
+              <strong>BQL Chung cư Hoa Sen:</strong> 0988.777.666
+            </li>
+            <li style="margin-bottom: 10px">
+              <i
+                class="fas fa-home"
+                style="width: 25px; color: var(--primary-color)"
+              ></i>
+              <strong>Chủ trọ Bình Dân:</strong> 0912.345.678
+            </li>
+            <li
+              style="
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px dashed var(--border-color);
+              "
+            >
+              <i
+                class="fas fa-envelope"
+                style="width: 25px; color: var(--primary-color)"
+              ></i>
+              <strong>Liên hệ Trang WEB</strong> nguyen0877780858@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function filterBuildings() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let items = document.getElementsByClassName("building-item");
+        for (let i = 0; i < items.length; i++) {
+          let name = items[i].querySelector(".b-name").innerText.toLowerCase();
+          items[i].style.display = name.includes(input) ? "block" : "none";
+        }
+      }
+    </script>
+  </body>
+</html>

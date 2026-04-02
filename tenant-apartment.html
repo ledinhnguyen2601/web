@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cổng Cư Dân Chung Cư</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <div class="sidebar-brand" style="color: #0f766e">
+          <i class="fas fa-user-circle"></i> Cổng Cư Dân
+        </div>
+        <ul class="nav-menu">
+          <li class="active">
+            <a href="#" style="color: #0f766e; border-right-color: #0f766e"
+              ><i class="fas fa-bullhorn"></i> Bảng tin Tòa nhà</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fas fa-file-invoice"></i> Phí Quản lý & Hóa đơn</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fas fa-exclamation-triangle"></i> Báo cáo sự cố</a
+            >
+          </li>
+          <li
+            style="
+              border-top: 1px solid var(--border-color);
+              margin-top: 10px;
+              padding-top: 10px;
+            "
+          >
+            <a href="#"><i class="fas fa-motorcycle"></i> Quản lý Thẻ xe</a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <h2 style="font-size: 1.1rem">Căn hộ: 301 - Chung cư Hoa Sen</h2>
+          <button
+            class="btn btn-outline logout-btn"
+            style="width: auto; padding: 5px 15px"
+          >
+            Đăng xuất
+          </button>
+        </header>
+
+        <div class="container" style="padding-top: 30px; max-width: 800px">
+          <h3
+            style="
+              margin-bottom: 15px;
+              border-bottom: 2px solid #0f766e;
+              display: inline-block;
+              padding-bottom: 5px;
+            "
+          >
+            Bảng tin từ Ban Quản Lý
+          </h3>
+
+          <div
+            class="card"
+            style="margin-bottom: 15px; border-left: 4px solid #0f766e"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+              "
+            >
+              <strong style="font-size: 1.1rem; color: var(--text-main)"
+                >Thông báo vệ sinh bể nước ngầm định kỳ</strong
+              >
+              <span style="font-size: 0.8rem; color: var(--text-muted)"
+                ><i class="fas fa-clock"></i> 20/03/2026</span
+              >
+            </div>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+              "
+            >
+              Kính gửi Quý cư dân, BQL xin thông báo lịch thau rửa bể nước ngầm
+              vào Chủ nhật tuần này. Kính mong cư dân chủ động tích trữ nước
+              sinh hoạt...
+            </p>
+            <img
+              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+              style="max-width: 100%; border-radius: 6px"
+            />
+          </div>
+
+          <div
+            class="card"
+            style="margin-bottom: 15px; border-left: 4px solid #f59e0b"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+              "
+            >
+              <strong style="font-size: 1.1rem; color: var(--text-main)"
+                >Yêu cầu đóng phí quản lý Tháng 3</strong
+              >
+              <span style="font-size: 0.8rem; color: var(--text-muted)"
+                ><i class="fas fa-clock"></i> 15/03/2026</span
+              >
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem">
+              Đề nghị các căn hộ chưa đóng phí quản lý tháng 3 vui lòng thanh
+              toán tại VP BQL hoặc chuyển khoản trước ngày 25/03 để tránh gián
+              đoạn dịch vụ.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>

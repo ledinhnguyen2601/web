@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý Chung Cư - Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <div class="sidebar-brand" style="color: #0f766e">
+          <i class="fas fa-building"></i> BQL Chung Cư
+        </div>
+        <ul class="nav-menu">
+          <li class="active">
+            <a href="#" style="color: #0f766e; border-right-color: #0f766e"
+              ><i class="fas fa-chart-pie"></i> Tổng quan</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-users"></i> Quản lý Cư dân</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-motorcycle"></i> Đăng ký Bãi xe</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-bullhorn"></i> Phát Thông báo</a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <h2 style="font-size: 1.2rem">Bảng điều khiển Tòa nhà</h2>
+          <div>
+            <span style="margin-right: 15px; font-weight: 500">BQL Admin</span>
+            <button
+              class="btn btn-outline logout-btn"
+              style="width: auto; padding: 6px 15px"
+            >
+              Đăng xuất
+            </button>
+          </div>
+        </header>
+
+        <div class="container" style="padding-top: 30px">
+          <div class="dashboard-cards">
+            <div class="card" style="border-left: 4px solid #0f766e">
+              <p style="color: var(--text-muted); font-size: 0.9rem">
+                Tổng số căn hộ
+              </p>
+              <h3 style="font-size: 1.8rem; margin-top: 5px">45 Căn</h3>
+            </div>
+            <div class="card" style="border-left: 4px solid #3b82f6">
+              <p style="color: var(--text-muted); font-size: 0.9rem">
+                Phương tiện đăng ký
+              </p>
+              <h3 style="font-size: 1.8rem; margin-top: 5px">82 Xe máy</h3>
+            </div>
+            <div class="card" style="border-left: 4px solid #8b5cf6">
+              <p style="color: var(--text-muted); font-size: 0.9rem">
+                Bảng tin đã phát
+              </p>
+              <h3 style="font-size: 1.8rem; margin-top: 5px">12 Tin</h3>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+              gap: 20px;
+            "
+          >
+            <div class="card">
+              <h3 style="margin-bottom: 15px">Đăng thông báo mới</h3>
+              <input
+                type="text"
+                placeholder="Tiêu đề thông báo..."
+                style="margin-bottom: 10px"
+              />
+              <textarea
+                rows="4"
+                placeholder="Nội dung thông báo (Lịch cắt điện, thu phí vệ sinh...)"
+                style="
+                  margin-bottom: 10px;
+                  width: 100%;
+                  border: 1px solid var(--border-color);
+                  border-radius: 6px;
+                  padding: 10px;
+                "
+              ></textarea>
+              <button class="btn btn-primary" style="background: #0f766e">
+                Phát thông báo cho Cư dân
+              </button>
+            </div>
+
+            <div class="card">
+              <h3 style="margin-bottom: 15px">Xe đăng ký gần đây</h3>
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Căn hộ</th>
+                      <th>Biển số</th>
+                      <th>Loại xe</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Căn 301</strong></td>
+                      <td>29A1-123.45</td>
+                      <td>Honda Vision</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Căn 405</strong></td>
+                      <td>37B2-987.65</td>
+                      <td>Yamaha Exciter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>
