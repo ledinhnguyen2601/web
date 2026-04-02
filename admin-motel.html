@@ -18,7 +18,7 @@
         <ul class="nav-menu">
           <li class="active">
             <a href="#" onclick="switchTab('tab-chotso', this)"
-              ><i class="fas fa-bolt"></i> Chốt Điện / Nước</a
+              ><i class="fas fa-bolt"></i> Duyệt Điện / Nước</a
             >
           </li>
           <li>
@@ -76,9 +76,9 @@
                 </h3>
               </div>
               <div class="card">
-                <label>Hóa đơn chờ thu</label>
+                <label>Chờ duyệt số</label>
                 <h3 style="font-size: 1.5rem; color: var(--text-main)">
-                  3 Đơn
+                  3 Phòng
                 </h3>
               </div>
               <div class="card">
@@ -96,68 +96,112 @@
                   padding-bottom: 10px;
                 "
               >
-                Chốt Số Điện Nước
+                Duyệt Số Điện Nước (Khách gửi)
               </h3>
               <div class="table-responsive">
                 <table>
                   <thead>
                     <tr>
                       <th>Phòng</th>
-                      <th>Điện (Cũ &rarr; Mới)</th>
-                      <th>Nước (Cũ &rarr; Mới)</th>
-                      <th>Trạng thái</th>
-                      <th>Lưu dữ liệu</th>
+                      <th>Điện (Cũ &rarr; Khách Báo)</th>
+                      <th>Nước (Cũ &rarr; Khách Báo)</th>
+                      <th>Minh chứng</th>
+                      <th>Thao tác</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><strong>P.101</strong></td>
                       <td>
-                        <input
-                          type="number"
-                          value="2100"
-                          disabled
-                          style="width: 70px"
-                        />
-                        &rarr;
-                        <input
-                          type="number"
-                          placeholder="Số mới"
-                          style="width: 70px"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          value="150"
-                          disabled
-                          style="width: 70px"
-                        />
-                        &rarr;
-                        <input
-                          type="number"
-                          placeholder="Số mới"
-                          style="width: 70px"
-                        />
-                      </td>
-                      <td>
-                        <span
-                          class="badge"
-                          style="background: #fef3c7; color: #d97706"
-                          >Chưa chốt</span
+                        <strong>P.101</strong><br /><span
+                          style="font-size: 0.8rem; color: var(--text-muted)"
+                          >Nguyễn Văn A</span
                         >
+                      </td>
+                      <td>
+                        <div
+                          style="display: flex; gap: 5px; align-items: center"
+                        >
+                          <input
+                            type="number"
+                            value="2100"
+                            disabled
+                            style="
+                              width: 70px;
+                              background: transparent;
+                              border: none;
+                              padding: 0;
+                            "
+                          />
+                          &rarr;
+                          <input
+                            type="number"
+                            value="2150"
+                            disabled
+                            style="
+                              width: 70px;
+                              font-weight: bold;
+                              color: var(--primary-color);
+                              background: #e2e8f0;
+                            "
+                          />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          style="display: flex; gap: 5px; align-items: center"
+                        >
+                          <input
+                            type="number"
+                            value="150"
+                            disabled
+                            style="
+                              width: 70px;
+                              background: transparent;
+                              border: none;
+                              padding: 0;
+                            "
+                          />
+                          &rarr;
+                          <input
+                            type="number"
+                            value="155"
+                            disabled
+                            style="
+                              width: 70px;
+                              font-weight: bold;
+                              color: var(--primary-color);
+                              background: #e2e8f0;
+                            "
+                          />
+                        </div>
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-outline"
+                          style="
+                            padding: 4px 8px;
+                            font-size: 0.8rem;
+                            width: auto;
+                          "
+                        >
+                          <i class="fas fa-image"></i> Xem Ảnh
+                        </button>
                       </td>
                       <td>
                         <button
                           class="btn btn-primary"
-                          style="padding: 6px; font-size: 0.8rem; width: auto"
+                          style="
+                            padding: 6px 12px;
+                            font-size: 0.8rem;
+                            width: auto;
+                          "
                           onclick="
                             alert(
-                              'Đã cập nhật dữ liệu. Bản ghi trước đã được lưu trữ!',
+                              'Đã duyệt số liệu và tự động tạo Hóa Đơn cho phòng P.101!',
                             )
                           "
                         >
-                          Lưu & Cập nhật
+                          <i class="fas fa-check"></i> Duyệt & Xuất Bill
                         </button>
                       </td>
                     </tr>
@@ -216,26 +260,6 @@
                         </button>
                       </td>
                     </tr>
-                    <tr>
-                      <td><strong>P.105</strong></td>
-                      <td>2.000.000 đ</td>
-                      <td>-</td>
-                      <td>
-                        <span
-                          class="badge"
-                          style="background: #f1f5f9; color: #64748b"
-                          >Phòng Trống</span
-                        >
-                      </td>
-                      <td>
-                        <button
-                          class="btn btn-outline"
-                          style="padding: 5px; font-size: 0.8rem; width: auto"
-                        >
-                          Chỉnh sửa
-                        </button>
-                      </td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -251,7 +275,7 @@
                   padding-bottom: 10px;
                 "
               >
-                Yêu cầu hỗ trợ từ Cư dân
+                Yêu cầu hỗ trợ từ Khách thuê
               </h3>
               <div class="table-responsive">
                 <table>
@@ -280,7 +304,7 @@
                           "
                           onchange="alert('Đã cập nhật trạng thái sửa chữa!')"
                         >
-                          <option>Đang chờ</option>
+                          <option>Tiếp nhận</option>
                           <option>Đang sửa</option>
                           <option>Hoàn thành</option>
                         </select>

@@ -94,22 +94,55 @@
 
           <div id="tab-baoloi" class="content-section" style="display: none">
             <div class="card">
-              <h3 style="margin-bottom: 15px; color: var(--text-main)">
-                <i class="fas fa-tools"></i> Gửi Yêu Cầu Hỗ Trợ
+              <h3
+                style="
+                  margin-bottom: 15px;
+                  color: var(--text-main);
+                  border-bottom: 1px solid var(--border-color);
+                  padding-bottom: 10px;
+                "
+              >
+                <i class="fas fa-tools"></i> Gửi Yêu Cầu Hỗ Trợ / Báo Lỗi
               </h3>
+
               <label>Phân loại sự cố</label>
-              <select id="issueType">
-                <option>Thang máy</option>
-                <option>Điện/Nước</option>
-                <option>An ninh</option>
-                <option>Khác</option>
+              <select
+                id="issueType"
+                onchange="
+                  document.getElementById('otherIssue').style.display =
+                    this.value === 'khac' ? 'block' : 'none'
+                "
+              >
+                <option value="thangmay">
+                  Thang máy (Kẹt, hỏng nút bấm...)
+                </option>
+                <option value="dien">
+                  Sự cố Điện (Chập, cháy bóng hành lang...)
+                </option>
+                <option value="nuoc">Sự cố Nước (Rò rỉ, mất nước...)</option>
+                <option value="internet">Mạng Internet / Wifi chung</option>
+                <option value="anninh">
+                  An ninh trật tự (Ồn ào, mất đồ...)
+                </option>
+                <option value="vesinh">Vệ sinh chung (Hành lang rác...)</option>
+                <option value="khac">Vấn đề Khác...</option>
               </select>
-              <label>Mô tả chi tiết</label>
-              <textarea rows="3"></textarea>
+
+              <div id="otherIssue" style="display: none">
+                <label>Vui lòng ghi rõ lỗi:</label>
+                <input type="text" placeholder="Nhập vấn đề của bạn..." />
+              </div>
+
+              <label>Chi tiết tình trạng / Yêu cầu</label>
+              <textarea
+                rows="3"
+                placeholder="Mô tả cụ thể để BQL dễ dàng nắm bắt..."
+              ></textarea>
+
               <button
                 class="btn btn-primary"
                 style="background: #0f766e"
-                onclick="alert('Đã gửi báo cáo cho BQL!')"
+                onclick="alert('Đã gửi báo cáo thành công lên Ban Quản Lý!')"
               >
                 Gửi báo cáo
               </button>
